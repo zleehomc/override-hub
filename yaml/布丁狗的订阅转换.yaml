@@ -208,7 +208,7 @@ proxy-groups:
       - JP AUTO
       - US AUTO
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Direct.png
-    name: DIRECT
+    name: Global Direct
     type: select
     proxies:
       - DIRECT
