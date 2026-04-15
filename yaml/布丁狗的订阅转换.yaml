@@ -172,7 +172,7 @@ proxy-groups:
     name: TW AUTO
     type: fallback
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Gemini.png
+  - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Gemini
@@ -182,7 +182,7 @@ proxy-groups:
       - JP AUTO
       - US AUTO
       - DIRECT
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Claude.png
+  - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Claude
@@ -224,7 +224,7 @@ proxy-groups:
       - JP AUTO
       - US AUTO
       - DIRECT
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Direct.png
+  - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     name: Global Direct
     type: select
     proxies:
