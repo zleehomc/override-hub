@@ -138,6 +138,13 @@ proxy-groups:
       - JP AUTO
       - US AUTO
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
+    name: ChatGPT
+    type: select
+    proxies:
+      - SG AUTO
+      - JP AUTO
+      - US AUTO
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
     name: Codex
     type: select
     proxies:
@@ -196,6 +203,7 @@ proxy-groups:
       - AUTO
       - Gemini
       - Claude
+      - ChatGPT
       - Codex
       - Telegram
       - Google
@@ -211,7 +219,7 @@ rules:
   - "RULE-SET,bing,Codex"
   - "RULE-SET,copilot,Codex"
   - "RULE-SET,bard,Gemini"
-  - "RULE-SET,openai,Codex"
+  - "RULE-SET,openai,ChatGPT"
   - "RULE-SET,codex,Codex"
   - "RULE-SET,claude,Claude"
   - "RULE-SET,steam,PROXY"
