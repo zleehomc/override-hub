@@ -90,13 +90,6 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  codex:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Codex/Codex.yaml
-    path: ./ruleset/codex.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
   steam:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
     path: ./ruleset/steam.yaml
@@ -117,6 +110,7 @@ proxy-groups:
       - SG AUTO
       - JP AUTO
       - US AUTO
+      - TW AUTO
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
@@ -139,13 +133,6 @@ proxy-groups:
       - US AUTO
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
     name: ChatGPT
-    type: select
-    proxies:
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
-    name: Codex
     type: select
     proxies:
       - SG AUTO
@@ -195,6 +182,13 @@ proxy-groups:
     name: US AUTO
     type: fallback
     interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    filter: (?i)台湾|Taiwan|TW|🇹🇼
+    name: TW AUTO
+    type: fallback
+    interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
@@ -204,23 +198,22 @@ proxy-groups:
       - Gemini
       - Claude
       - ChatGPT
-      - Codex
       - Telegram
       - Google
       - HK AUTO
       - SG AUTO
       - JP AUTO
       - US AUTO
+      - TW AUTO
     name: GLOBAL
     type: select
 
 rules:
   - "RULE-SET,private,DIRECT"
-  - "RULE-SET,bing,Codex"
-  - "RULE-SET,copilot,Codex"
+  - "RULE-SET,bing,ChatGPT"
+  - "RULE-SET,copilot,ChatGPT"
   - "RULE-SET,bard,Gemini"
   - "RULE-SET,openai,ChatGPT"
-  - "RULE-SET,codex,Codex"
   - "RULE-SET,claude,Claude"
   - "RULE-SET,steam,PROXY"
   - "RULE-SET,telegram_domain,Telegram"
