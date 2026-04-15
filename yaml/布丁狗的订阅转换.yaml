@@ -207,6 +207,11 @@ proxy-groups:
       - SG AUTO
       - JP AUTO
       - US AUTO
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Direct.png
+    name: DIRECT
+    type: select
+    proxies:
+      - DIRECT
 
 rules:
   - "RULE-SET,private,DIRECT"
