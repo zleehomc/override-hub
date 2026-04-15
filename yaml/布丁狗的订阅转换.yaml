@@ -90,6 +90,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  codex:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Codex/Codex.yaml
+    path: ./ruleset/codex.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
   steam:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
     path: ./ruleset/steam.yaml
@@ -116,8 +123,22 @@ proxy-groups:
     name: AUTO
     type: url-test
     interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Gemini.png
+    name: Gemini
+    type: select
+    proxies:
+      - SG AUTO
+      - JP AUTO
+      - US AUTO
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Claude.png
+    name: Claude
+    type: select
+    proxies:
+      - SG AUTO
+      - JP AUTO
+      - US AUTO
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
-    name: AIGC
+    name: Codex
     type: select
     proxies:
       - SG AUTO
@@ -173,7 +194,9 @@ proxy-groups:
     proxies:
       - PROXY
       - AUTO
-      - AIGC
+      - Gemini
+      - Claude
+      - Codex
       - Telegram
       - Google
       - HK AUTO
@@ -185,11 +208,12 @@ proxy-groups:
 
 rules:
   - "RULE-SET,private,DIRECT"
-  - "RULE-SET,bing,AIGC"
-  - "RULE-SET,copilot,AIGC"
-  - "RULE-SET,bard,AIGC"
-  - "RULE-SET,openai,AIGC"
-  - "RULE-SET,claude,AIGC"
+  - "RULE-SET,bing,Codex"
+  - "RULE-SET,copilot,Codex"
+  - "RULE-SET,bard,Gemini"
+  - "RULE-SET,openai,Codex"
+  - "RULE-SET,codex,Codex"
+  - "RULE-SET,claude,Claude"
   - "RULE-SET,steam,PROXY"
   - "RULE-SET,telegram_domain,Telegram"
   - "RULE-SET,telegram_ip,Telegram"
