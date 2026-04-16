@@ -177,6 +177,18 @@ proxy-groups:
     name: TW AUTO
     type: fallback
     interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
+    name: Telegram AUTO
+    type: fallback
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
+    name: Google AUTO
+    type: fallback
+    interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
@@ -213,6 +225,7 @@ proxy-groups:
     name: Telegram
     type: select
     proxies:
+      - Telegram AUTO
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -224,6 +237,7 @@ proxy-groups:
     name: Google
     type: select
     proxies:
+      - Google AUTO
       - HK AUTO
       - SG AUTO
       - JP AUTO
