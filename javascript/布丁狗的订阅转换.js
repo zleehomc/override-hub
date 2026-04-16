@@ -13,7 +13,7 @@ function main(config) {
       "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       name: "AUTO",
-      type: "url-test",
+      type: "fallback",
       interval: 300,
     },
     {
