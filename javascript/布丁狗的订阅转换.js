@@ -26,13 +26,13 @@ function main(config) {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png",
       name: "Telegram",
       type: "select",
-      proxies: ["Telegram AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png",
       name: "Google",
       type: "select",
-      proxies: ["Google AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
@@ -68,22 +68,6 @@ function main(config) {
       filter: "(?i)美国|USA|🇺🇸",
       name: "US AUTO",
       type: "url-test",
-      interval: 300,
-    },
-    {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png",
-      "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
-      name: "Telegram AUTO",
-      type: "fallback",
-      interval: 300,
-    },
-    {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png",
-      "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
-      name: "Google AUTO",
-      type: "fallback",
       interval: 300,
     },
     {
