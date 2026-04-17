@@ -100,8 +100,6 @@ rule-providers:
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: PROXY
     type: select
     proxies:
@@ -113,8 +111,8 @@ proxy-groups:
       - TW AUTO
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
+    name: GLOBAL
+    type: select
     proxies:
       - PROXY
       - AUTO
@@ -129,8 +127,6 @@ proxy-groups:
       - US AUTO
       - TW AUTO
       - DIRECT
-    name: GLOBAL
-    type: select
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     name: Global Direct
     type: select
@@ -140,7 +136,7 @@ proxy-groups:
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: AUTO
-    type: fallback
+    type: url-test
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
     include-all: true
@@ -203,8 +199,6 @@ proxy-groups:
       - US AUTO
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Telegram
     type: select
     proxies:
@@ -215,8 +209,6 @@ proxy-groups:
       - US AUTO
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Google
     type: select
     proxies:
