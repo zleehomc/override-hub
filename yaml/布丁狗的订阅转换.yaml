@@ -178,8 +178,6 @@ proxy-groups:
     type: fallback
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Gemini
     type: select
     proxies:
@@ -188,8 +186,6 @@ proxy-groups:
       - US AUTO
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: Claude
     type: select
     proxies:
@@ -198,11 +194,10 @@ proxy-groups:
       - US AUTO
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
     name: ChatGPT
     type: select
     proxies:
+      - AUTO
       - SG AUTO
       - JP AUTO
       - US AUTO
@@ -233,6 +228,7 @@ proxy-groups:
       - DIRECT
 
 rules:
+  - "DOMAIN-SUFFIX,zleehomc.top,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,ChatGPT"
   - "RULE-SET,copilot,ChatGPT"
