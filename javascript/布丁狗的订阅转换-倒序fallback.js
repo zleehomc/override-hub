@@ -46,6 +46,12 @@ function nodeCost(name) {
   return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
 }
 
+function shouldExcludeProxyName(name, excludePattern) {
+  if (excludePattern && excludePattern.test(name)) return true;
+
+  return /维护|Maintenance|下载专用/i.test(name);
+}
+
 function preferredProxyNames(names) {
   return names
     .map((name, index) => ({ name, index }))
@@ -69,17 +75,21 @@ function buildPreferredProxyNames(config, group) {
   const names = proxies
     .filter((proxy) => {
       if (!proxy || !proxy.name) return false;
-      if (excludePattern && excludePattern.test(proxy.name)) return false;
+      if (shouldExcludeProxyName(proxy.name, excludePattern)) return false;
       if (includePattern && !includePattern.test(proxy.name)) return false;
       return true;
     })
     .map((proxy) => proxy.name);
 
+  if (names.length > 0) {
+    return preferredProxyNames(names);
+  }
+
   if (Array.isArray(group.proxies) && group.proxies.length > 0) {
     return preferredProxyNames(group.proxies);
   }
 
-  return preferredProxyNames(names);
+  return [];
 }
 
 function main(config) {
