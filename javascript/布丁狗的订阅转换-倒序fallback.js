@@ -10,7 +10,58 @@ function toRegExp(pattern) {
   }
 }
 
-function buildReversedProxyNames(config, group) {
+const TIER_SCORE = new Map([
+  ["❻", 60],
+  ["⑥", 60],
+  ["➏", 60],
+  ["❺", 50],
+  ["⑤", 50],
+  ["➎", 50],
+  ["❹", 40],
+  ["④", 40],
+  ["➍", 40],
+  ["❸", 30],
+  ["③", 30],
+  ["➌", 30],
+  ["❷", 20],
+  ["②", 20],
+  ["➋", 20],
+  ["❶", 10],
+  ["①", 10],
+  ["➊", 10],
+  ["⓪", 0],
+  ["⓿", 0],
+]);
+
+function tierScore(name) {
+  for (const [marker, score] of TIER_SCORE) {
+    if (name.includes(marker)) return score;
+  }
+
+  return -1;
+}
+
+function nodeCost(name) {
+  const match = name.match(/\bx\s*(\d+(?:\.\d+)?)/i);
+  return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+}
+
+function preferredProxyNames(names) {
+  return names
+    .map((name, index) => ({ name, index }))
+    .sort((a, b) => {
+      const tierDiff = tierScore(b.name) - tierScore(a.name);
+      if (tierDiff !== 0) return tierDiff;
+
+      const costDiff = nodeCost(a.name) - nodeCost(b.name);
+      if (costDiff !== 0) return costDiff;
+
+      return a.index - b.index;
+    })
+    .map((item) => item.name);
+}
+
+function buildPreferredProxyNames(config, group) {
   const proxies = Array.isArray(config.proxies) ? config.proxies : [];
   const includePattern = toRegExp(group.filter);
   const excludePattern = toRegExp(group["exclude-filter"]);
@@ -22,14 +73,13 @@ function buildReversedProxyNames(config, group) {
       if (includePattern && !includePattern.test(proxy.name)) return false;
       return true;
     })
-    .map((proxy) => proxy.name)
-    .reverse();
+    .map((proxy) => proxy.name);
 
   if (Array.isArray(group.proxies) && group.proxies.length > 0) {
-    return [...group.proxies].reverse();
+    return preferredProxyNames(group.proxies);
   }
 
-  return names;
+  return preferredProxyNames(names);
 }
 
 function main(config) {
@@ -38,10 +88,10 @@ function main(config) {
   for (const group of config["proxy-groups"]) {
     if (!group || group.type !== "fallback") continue;
 
-    const reversedNames = buildReversedProxyNames(config, group);
-    if (reversedNames.length === 0) continue;
+    const preferredNames = buildPreferredProxyNames(config, group);
+    if (preferredNames.length === 0) continue;
 
-    group.proxies = reversedNames;
+    group.proxies = preferredNames;
     delete group["include-all"];
   }
 
