@@ -134,47 +134,48 @@ proxy-groups:
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: ❻|⑥|➏
     name: AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
-    filter: (?i)香港|Hong Kong|HK|🇭🇰
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(香港|Hong Kong|HK|🇭🇰).*(❻|⑥|➏)|(❻|⑥|➏).*(香港|Hong Kong|HK|🇭🇰)
     name: HK AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
-    filter: (?i)新加坡|Singapore|SG|🇸🇬
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(新加坡|Singapore|SG|🇸🇬).*(❻|⑥|➏)|(❻|⑥|➏).*(新加坡|Singapore|SG|🇸🇬)
     name: SG AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
-    filter: (?i)日本|Japan|JP|🇯🇵
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(日本|Japan|JP|🇯🇵).*(❻|⑥|➏)|(❻|⑥|➏).*(日本|Japan|JP|🇯🇵)
     name: JP AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
-    filter: (?i)美国|USA|US|🇺🇸
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(美国|USA|US|🇺🇸).*(❻|⑥|➏)|(❻|⑥|➏).*(美国|USA|US|🇺🇸)
     name: US AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1
-    filter: (?i)台湾|Taiwan|TW|🇹🇼
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(台湾|Taiwan|TW|🇹🇼).*(❻|⑥|➏)|(❻|⑥|➏).*(台湾|Taiwan|TW|🇹🇼)
     name: TW AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
