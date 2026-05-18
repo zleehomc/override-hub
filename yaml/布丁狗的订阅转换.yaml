@@ -230,6 +230,8 @@ proxy-groups:
       - DIRECT
 
 rules:
+  - "DOMAIN-SUFFIX,corp.kuaishou.com,DIRECT"
+  - "DOMAIN-SUFFIX,kwaidc.com,DIRECT"
   - "DOMAIN-SUFFIX,zleehomc.top,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,ChatGPT"

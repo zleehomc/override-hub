@@ -92,7 +92,48 @@ function buildPreferredProxyNames(config, group) {
   return [];
 }
 
+function prependUniqueRules(config, rules) {
+  if (!Array.isArray(config.rules)) config.rules = [];
+
+  for (const rule of [...rules].reverse()) {
+    if (!config.rules.includes(rule)) {
+      config.rules.unshift(rule);
+    }
+  }
+}
+
+function appendUniqueItems(target, items) {
+  if (!Array.isArray(target)) return [...items];
+
+  for (const item of items) {
+    if (!target.includes(item)) target.push(item);
+  }
+
+  return target;
+}
+
+function patchKuaishouCorpDirect(config) {
+  prependUniqueRules(config, [
+    "DOMAIN-SUFFIX,corp.kuaishou.com,DIRECT",
+    "DOMAIN-SUFFIX,kwaidc.com,DIRECT",
+  ]);
+
+  config.dns = config.dns || {};
+  config.dns["fake-ip-filter"] = appendUniqueItems(config.dns["fake-ip-filter"], [
+    "+.corp.kuaishou.com",
+    "+.kwaidc.com",
+  ]);
+
+  if (config.tun && Array.isArray(config.tun["route-exclude-address"])) {
+    config.tun["route-exclude-address"] = config.tun["route-exclude-address"].filter(
+      (item) => item !== "*.corp.kuaishou.com" && item !== "*.kwaidc.com"
+    );
+  }
+}
+
 function main(config) {
+  patchKuaishouCorpDirect(config);
+
   if (!Array.isArray(config["proxy-groups"])) return config;
 
   for (const group of config["proxy-groups"]) {
