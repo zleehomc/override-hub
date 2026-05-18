@@ -116,6 +116,9 @@ function patchKuaishouCorpDirect(config) {
   prependUniqueRules(config, [
     "DOMAIN-SUFFIX,corp.kuaishou.com,DIRECT",
     "DOMAIN-SUFFIX,kwaidc.com,DIRECT",
+    "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+    "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+    "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
   ]);
 
   config.dns = config.dns || {};
