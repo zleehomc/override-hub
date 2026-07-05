@@ -116,7 +116,6 @@ proxy-groups:
     proxies:
       - PROXY
       - AUTO
-      - Gemini
       - Claude
       - ChatGPT
       - Telegram
@@ -180,15 +179,6 @@ proxy-groups:
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google.png
-    name: Gemini
-    type: select
-    proxies:
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-      - TW AUTO
-      - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
     name: Claude
     type: select
@@ -227,6 +217,7 @@ proxy-groups:
       - SG AUTO
       - JP AUTO
       - US AUTO
+      - TW AUTO
       - DIRECT
 
 rules:
@@ -239,7 +230,7 @@ rules:
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,ChatGPT"
   - "RULE-SET,copilot,ChatGPT"
-  - "RULE-SET,bard,Gemini"
+  - "RULE-SET,bard,Google"
   - "RULE-SET,openai,ChatGPT"
   - "RULE-SET,claude,Claude"
   - "RULE-SET,steam,PROXY"
