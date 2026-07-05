@@ -118,7 +118,6 @@ proxy-groups:
       - AUTO
       - Claude
       - ChatGPT
-      - Telegram
       - Google
       - HK AUTO
       - SG AUTO
@@ -282,16 +281,6 @@ proxy-groups:
       - US AUTO
       - TW AUTO
       - DIRECT
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
-    name: Telegram
-    type: select
-    proxies:
-      - AUTO
-      - HK AUTO
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-      - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
     name: Google
     type: select
@@ -318,8 +307,8 @@ rules:
   - "RULE-SET,openai,ChatGPT"
   - "RULE-SET,claude,Claude"
   - "RULE-SET,steam,PROXY"
-  - "RULE-SET,telegram_domain,Telegram"
-  - "RULE-SET,telegram_ip,Telegram"
+  - "RULE-SET,telegram_domain,PROXY"
+  - "RULE-SET,telegram_ip,PROXY"
   - "RULE-SET,google_domain,Google"
   - "RULE-SET,google_ip,Google"
   - "RULE-SET,geolocation-!cn,PROXY"
