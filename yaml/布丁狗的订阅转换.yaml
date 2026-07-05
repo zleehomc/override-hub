@@ -131,54 +131,138 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
+  - name: AUTO 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: ❻|⑥|➏|❸|③|➌
+    filter: ❻|⑥|➏
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: AUTO 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: ❸|③|➌
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
     name: AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
+    proxies:
+      - AUTO 6-Tier
+      - AUTO 3-Tier
+  - name: HK 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: (?i)(香港|Hong Kong|HK|🇭🇰).*(❻|⑥|➏|❸|③|➌)|(❻|⑥|➏|❸|③|➌).*(香港|Hong Kong|HK|🇭🇰)
+    filter: (?i)(香港|Hong Kong|HK|🇭🇰).*(❻|⑥|➏)|(❻|⑥|➏).*(香港|Hong Kong|HK|🇭🇰)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: HK 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(香港|Hong Kong|HK|🇭🇰).*(❸|③|➌)|(❸|③|➌).*(香港|Hong Kong|HK|🇭🇰)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
     name: HK AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
+    proxies:
+      - HK 6-Tier
+      - HK 3-Tier
+  - name: SG 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: (?i)(新加坡|Singapore|SG|🇸🇬).*(❻|⑥|➏|❸|③|➌)|(❻|⑥|➏|❸|③|➌).*(新加坡|Singapore|SG|🇸🇬)
+    filter: (?i)(新加坡|Singapore|SG|🇸🇬).*(❻|⑥|➏)|(❻|⑥|➏).*(新加坡|Singapore|SG|🇸🇬)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: SG 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(新加坡|Singapore|SG|🇸🇬).*(❸|③|➌)|(❸|③|➌).*(新加坡|Singapore|SG|🇸🇬)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
     name: SG AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
+    proxies:
+      - SG 6-Tier
+      - SG 3-Tier
+  - name: JP 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: (?i)(日本|Japan|JP|🇯🇵).*(❻|⑥|➏|❸|③|➌)|(❻|⑥|➏|❸|③|➌).*(日本|Japan|JP|🇯🇵)
+    filter: (?i)(日本|Japan|JP|🇯🇵).*(❻|⑥|➏)|(❻|⑥|➏).*(日本|Japan|JP|🇯🇵)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: JP 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(日本|Japan|JP|🇯🇵).*(❸|③|➌)|(❸|③|➌).*(日本|Japan|JP|🇯🇵)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
     name: JP AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
+    proxies:
+      - JP 6-Tier
+      - JP 3-Tier
+  - name: US 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: (?i)(美国|USA|US|🇺🇸).*(❻|⑥|➏|❸|③|➌)|(❻|⑥|➏|❸|③|➌).*(美国|USA|US|🇺🇸)
+    filter: (?i)(美国|USA|US|🇺🇸).*(❻|⑥|➏)|(❻|⑥|➏).*(美国|USA|US|🇺🇸)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: US 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(美国|USA|US|🇺🇸).*(❸|③|➌)|(❸|③|➌).*(美国|USA|US|🇺🇸)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
     name: US AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png
+    proxies:
+      - US 6-Tier
+      - US 3-Tier
+  - name: TW 6-Tier
+    type: fallback
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
-    filter: (?i)(台湾|Taiwan|TW|🇹🇼).*(❻|⑥|➏|❸|③|➌)|(❻|⑥|➏|❸|③|➌).*(台湾|Taiwan|TW|🇹🇼)
+    filter: (?i)(台湾|Taiwan|TW|🇹🇼).*(❻|⑥|➏)|(❻|⑥|➏).*(台湾|Taiwan|TW|🇹🇼)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: TW 3-Tier
+    type: fallback
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|CN1|维护|Maintenance|下载专用|公益
+    filter: (?i)(台湾|Taiwan|TW|🇹🇼).*(❸|③|➌)|(❸|③|➌).*(台湾|Taiwan|TW|🇹🇼)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png
     name: TW AUTO
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
+    proxies:
+      - TW 6-Tier
+      - TW 3-Tier
   - icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
     name: Claude
     type: select
